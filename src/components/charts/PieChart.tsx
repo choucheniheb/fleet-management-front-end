@@ -1,0 +1,33 @@
+"use client";
+
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const PieChart = () => {
+  const data = {
+    labels: ["On-Time", "Delayed", "Early"],
+    datasets: [
+      {
+        label: "Delivery Status",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+        ],
+        borderColor: [
+          "rgba(75, 192, 192, 1)",
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  return <Pie data={data} />;
+};
+
+export default PieChart;

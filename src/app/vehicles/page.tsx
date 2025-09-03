@@ -1,25 +1,28 @@
 
 import Link from 'next/link';
+import { Vehicle } from '../types';
 
-const vehicles = [
-  { id: 1, name: 'Vehicle 1', driver: 'John Doe' },
-  { id: 2, name: 'Vehicle 2', driver: 'Jane Smith' },
-  { id: 3, name: 'Vehicle 3', driver: 'Peter Jones' },
+const vehicles: Vehicle[] = [
+  { id: 1, make: 'Toyota', model: 'Camry', year: 2021, vin: '1234567890' },
+  { id: 2, make: 'Honda', model: 'Civic', year: 2022, vin: '0987654321' },
+  { id: 3, make: 'Ford', model: 'F-150', year: 2020, vin: '1122334455' },
 ];
 
 const Vehicles = () => {
   return (
     <div>
-      <h1>Vehicles</h1>
-      <ul>
+      <h1 style={{ marginBottom: '30px', color: '#333' }}>Vehicles</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
         {vehicles.map((vehicle) => (
-          <li key={vehicle.id}>
-            <Link href={`/vehicles/${vehicle.id}`}>
-              {vehicle.name} - {vehicle.driver}
-            </Link>
-          </li>
+          <Link key={vehicle.id} href={`/vehicles/${vehicle.id}`}>
+            <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', cursor: 'pointer' }}>
+              <h2 style={{ marginBottom: '10px', color: '#555' }}>{vehicle.make} {vehicle.model}</h2>
+              <p style={{ color: '#777' }}>Year: {vehicle.year}</p>
+              <p style={{ color: '#777' }}>VIN: {vehicle.vin}</p>
+            </div>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

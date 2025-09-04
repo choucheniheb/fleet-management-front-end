@@ -1,17 +1,18 @@
-import "../globals.css";
-import Sidebar from "../../components/Sidebar";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
 
-export default function DashboardLayout({ children }) {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex h-screen bg-gray-100 font-sans">
+    <div className="flex h-screen bg-gray-100">
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Header />
-        <main className="flex-1 p-4 overflow-y-auto">{children}</main>
-        <Footer />
+        <main className="flex-1 p-6">
+          {children}
+        </main>
       </div>
     </div>
   );
-}
+};
+
+export default DashboardLayout;

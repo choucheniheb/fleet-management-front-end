@@ -12,16 +12,8 @@ const PieChart = () => {
       {
         label: "Delivery Status",
         data: [300, 50, 100],
-        backgroundColor: [
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-        ],
-        borderColor: [
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-        ],
+        backgroundColor: ["#50E3C2", "#FF4136", "#F0B429"],
+        borderColor: ["#50E3C2", "#FF4136", "#F0B429"],
         borderWidth: 1,
       },
     ],

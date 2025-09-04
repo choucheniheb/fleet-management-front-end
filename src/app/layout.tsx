@@ -11,12 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div style={{ display: 'flex' }}>
+      <body className="bg-gray-100 font-sans">
+        <div className="flex h-screen">
           <Sidebar />
-          <div style={{ flex: 1 }}>
+          <div className="flex-1 flex flex-col">
             <Header />
-            <main style={{ padding: '20px' }}>{children}</main>
+            <main className="flex-1 p-4 overflow-y-auto">{children}</main>
             <Footer />
           </div>
         </div>

@@ -27,34 +27,36 @@ const VehicleDetails = () => {
   };
 
   return (
-    <div>
-      <h1>{vehicle.make} {vehicle.model}</h1>
-      <p>Year: {vehicle.year}</p>
-      <p>VIN: {vehicle.vin}</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>Speed</h2>
-          <GaugeChart id="speed-gauge" nrOfLevels={20} percent={vehicleData.speed / 120} />
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h1 className="text-4xl font-bold text-gray-800">{vehicle.make} {vehicle.model}</h1>
+        <p className="text-gray-600">Year: {vehicle.year}</p>
+        <p className="text-gray-600">VIN: {vehicle.vin}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Speed</h2>
+          <GaugeChart id="speed-gauge" nrOfLevels={20} percent={vehicleData.speed / 120} textColor="#333" />
         </div>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>RPM</h2>
-          <GaugeChart id="rpm-gauge" nrOfLevels={30} percent={vehicleData.rpm / 7000} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">RPM</h2>
+          <GaugeChart id="rpm-gauge" nrOfLevels={30} percent={vehicleData.rpm / 7000} textColor="#333" />
         </div>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>Fuel Level</h2>
-          <GaugeChart id="fuel-gauge" nrOfLevels={10} percent={vehicleData.fuelLevel} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Fuel Level</h2>
+          <GaugeChart id="fuel-gauge" nrOfLevels={10} percent={vehicleData.fuelLevel} textColor="#333" />
         </div>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>Engine Temperature</h2>
-          <GaugeChart id="temp-gauge" nrOfLevels={15} percent={vehicleData.engineTemp / 120} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Engine Temperature</h2>
+          <GaugeChart id="temp-gauge" nrOfLevels={15} percent={vehicleData.engineTemp / 120} textColor="#333" />
         </div>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>Battery Voltage</h2>
-          <GaugeChart id="voltage-gauge" nrOfLevels={10} percent={(vehicleData.batteryVoltage - 10) / 4} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Battery Voltage</h2>
+          <GaugeChart id="voltage-gauge" nrOfLevels={10} percent={(vehicleData.batteryVoltage - 10) / 4} textColor="#333" />
         </div>
-        <div style={{ width: '300px', margin: '20px' }}>
-          <h2>Oil Pressure</h2>
-          <GaugeChart id="pressure-gauge" nrOfLevels={10} percent={vehicleData.oilPressure / 100} />
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Oil Pressure</h2>
+          <GaugeChart id="pressure-gauge" nrOfLevels={10} percent={vehicleData.oilPressure / 100} textColor="#333" />
         </div>
       </div>
     </div>

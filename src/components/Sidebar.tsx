@@ -3,18 +3,18 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <div style={{ width: '250px', backgroundColor: '#fff', padding: '20px', borderRight: '1px solid #e0e0e0', height: '100vh' }}>
-      <h2 style={{ marginBottom: '30px', color: '#333' }}>Fleet Management</h2>
+    <div className="w-64 bg-white p-5 border-r border-gray-200 h-screen">
+      <h2 className="text-2xl font-bold mb-10 text-gray-800">Fleet Management</h2>
       <nav>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-          <li style={{ marginBottom: '15px' }}>
-            <Link href="/overview" style={{ color: '#555', fontSize: '16px', fontWeight: '500' }}>Overview</Link>
+        <ul>
+          <li className="mb-4">
+            <Link href="/overview" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Overview</Link>
           </li>
-          <li style={{ marginBottom: '15px' }}>
-            <Link href="/vehicles" style={{ color: '#555', fontSize: '16px', fontWeight: '500' }}>Vehicles</Link>
+          <li className="mb-4">
+            <Link href="/vehicles" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Vehicles</Link>
           </li>
-          <li style={{ marginBottom: '15px' }}>
-            <Link href="/settings" style={{ color: '#555', fontSize: '16px', fontWeight: '500' }}>Settings</Link>
+          <li className="mb-4">
+            <Link href="/settings" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Settings</Link>
           </li>
         </ul>
       </nav>

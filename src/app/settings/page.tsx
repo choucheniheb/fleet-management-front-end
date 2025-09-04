@@ -6,13 +6,23 @@ const Settings = () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Profile Settings</h2>
         <form>
-          <div className="mb-4">
-            <label className="block text-gray-600 mb-2">Name</label>
-            <input type="text" defaultValue="John Doe" className="w-full p-2 border border-gray-300 rounded-lg" />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-600 mb-2">Email</label>
-            <input type="email" defaultValue="john.doe@example.com" className="w-full p-2 border border-gray-300 rounded-lg" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="mb-4">
+              <label className="block text-gray-600 mb-2">Name</label>
+              <input type="text" defaultValue="John Doe" className="w-full p-2 border border-gray-300 rounded-lg" />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-600 mb-2">Email</label>
+              <input type="email" defaultValue="john.doe@example.com" className="w-full p-2 border border-gray-300 rounded-lg" />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-600 mb-2">Phone</label>
+              <input type="tel" defaultValue="+1 234 567 890" className="w-full p-2 border border-gray-300 rounded-lg" />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-600 mb-2">Address</label>
+              <input type="text" defaultValue="123 Main St, Anytown, USA" className="w-full p-2 border border-gray-300 rounded-lg" />
+            </div>
           </div>
           <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</button>
         </form>

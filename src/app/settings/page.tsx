@@ -1,20 +1,20 @@
 
 const Settings = () => {
   return (
-    <div>
-      <h1 style={{ marginBottom: '30px', color: '#333' }}>Settings</h1>
-      <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-        <h2 style={{ marginBottom: '20px', color: '#555' }}>Profile Settings</h2>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">Settings</h1>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-2xl font-semibold text-gray-700 mb-4">Profile Settings</h2>
         <form>
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px', color: '#777' }}>Name</label>
-            <input type="text" defaultValue="John Doe" style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
+          <div className="mb-4">
+            <label className="block text-gray-600 mb-2">Name</label>
+            <input type="text" defaultValue="John Doe" className="w-full p-2 border border-gray-300 rounded-lg" />
           </div>
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px', color: '#777' }}>Email</label>
-            <input type="email" defaultValue="john.doe@example.com" style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
+          <div className="mb-4">
+            <label className="block text-gray-600 mb-2">Email</label>
+            <input type="email" defaultValue="john.doe@example.com" className="w-full p-2 border border-gray-300 rounded-lg" />
           </div>
-          <button type="submit" style={{ padding: '10px 20px', borderRadius: '5px', border: 'none', backgroundColor: '#337ab7', color: '#fff', cursor: 'pointer' }}>Save</button>
+          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</button>
         </form>
       </div>
     </div>

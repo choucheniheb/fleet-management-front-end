@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Vehicle 1",
+    "url": "/dashboard/vehicles/1"
+  },
+  {
+    "name": "Vehicle 2",
+    "url": "/dashboard/vehicles/2"
+  }
+]

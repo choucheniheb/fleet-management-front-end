@@ -1,0 +1,9 @@
+{
+  "id": 2,
+  "name": "Vehicle 2",
+  "model": "Model B",
+  "year": 2021,
+  "license_plate": "XYZ-789",
+  "vin": "0987654321FEDCBA0",
+  "status": "Inactive"
+}

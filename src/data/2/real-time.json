@@ -1,0 +1,8 @@
+{
+  "speed": 60,
+  "rpm": 2500,
+  "fuel_level": 80,
+  "engine_temp": 85,
+  "battery_voltage": 12.2,
+  "oil_pressure": 45
+}

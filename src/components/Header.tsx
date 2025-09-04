@@ -1,27 +1,18 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Bell, Search, User } from 'lucide-react';
 
 const Header = () => {
-  const [user, setUser] = useState(null);
-  const [notifications, setNotifications] = useState([]);
+  const user = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+  };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await fetch('/api/user');
-      const data = await res.json();
-      setUser(data);
-    };
-    const fetchNotifications = async () => {
-      const res = await fetch('/api/notifications');
-      const data = await res.json();
-      setNotifications(data);
-    };
-    fetchUser();
-    fetchNotifications();
-  }, []);
+  const notifications = [
+    { id: 1, message: 'Notification 1' },
+    { id: 2, message: 'Notification 2' },
+  ];
 
   return (
     <header className="flex items-center justify-between p-4 bg-white border-b">

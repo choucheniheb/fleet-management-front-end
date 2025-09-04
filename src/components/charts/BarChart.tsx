@@ -9,8 +9,8 @@ const BarChart = () => {
       {
         label: "Mileage (in km)",
         data: [1200, 1900, 300, 500, 200],
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "#50E3C2",
+        borderColor: "#50E3C2",
         borderWidth: 1,
       },
     ],

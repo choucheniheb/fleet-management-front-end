@@ -1,34 +1,21 @@
 
-import Link from 'next/link';
-import { Vehicle } from '../types';
+import VehicleList from '@/components/VehicleList';
 
-const vehicles: Vehicle[] = [
-  { id: 1, make: 'Toyota', model: 'Camry', year: 2021, vin: '1234567890' },
-  { id: 2, make: 'Honda', model: 'Civic', year: 2022, vin: '0987654321' },
-  { id: 3, make: 'Ford', model: 'F-150', year: 2020, vin: '1122334455' },
-];
+const fetchVehicles = async () => {
+  const res = await fetch('http://localhost:3000/api/vehicles');
+  const data = await res.json();
+  return data;
+};
 
-const Vehicles = () => {
+const VehiclesPage = async () => {
+  const vehicles = await fetchVehicles();
+
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-            <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl font-bold text-gray-800">Vehicles</h1>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Add Vehicle</button>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {vehicles.map((vehicle) => (
-          <Link key={vehicle.id} href={`/vehicles/${vehicle.id}`}>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h2 className="text-2xl font-semibold text-gray-700 mb-2">{vehicle.make} {vehicle.model}</h2>
-              <p className="text-gray-600">Year: {vehicle.year}</p>
-              <p className="text-gray-600">VIN: {vehicle.vin}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+    <div>
+      <VehicleList vehicles={vehicles} />
     </div>
   );
 };
 
-export default Vehicles;
+export default VehiclesPage;
 

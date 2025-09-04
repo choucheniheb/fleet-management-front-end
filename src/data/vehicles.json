@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Vehicle 1",
+    "model": "Model A",
+    "year": 2022,
+    "license_plate": "ABC-123",
+    "vin": "1234567890ABCDEF0",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Vehicle 2",
+    "model": "Model B",
+    "year": 2021,
+    "license_plate": "XYZ-789",
+    "vin": "0987654321FEDCBA0",
+    "status": "Inactive"
+  }
+]

@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import { LayoutDashboard, Car, Settings } from 'lucide-react';
 
 const Sidebar = () => {
   return (
@@ -8,13 +9,22 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li className="mb-4">
-            <Link href="/overview" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Overview</Link>
+            <Link href="/overview" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+              <LayoutDashboard className="mr-3" />
+              Overview
+            </Link>
           </li>
           <li className="mb-4">
-            <Link href="/vehicles" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Vehicles</Link>
+            <Link href="/vehicles" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+              <Car className="mr-3" />
+              Vehicles
+            </Link>
           </li>
           <li className="mb-4">
-            <Link href="/settings" className="text-gray-600 hover:text-blue-500 text-lg font-medium">Settings</Link>
+            <Link href="/settings" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+              <Settings className="mr-3" />
+              Settings
+            </Link>
           </li>
         </ul>
       </nav>

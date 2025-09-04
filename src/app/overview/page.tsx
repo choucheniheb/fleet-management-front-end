@@ -5,19 +5,19 @@ import PieChart from '../../components/charts/PieChart';
 
 const Overview = () => {
   return (
-    <div>
-      <h1 style={{ marginBottom: '30px', color: '#333' }}>Overview</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px' }}>
-        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-          <h2 style={{ marginBottom: '20px', color: '#555' }}>Fuel Consumption</h2>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">Overview</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Fuel Consumption</h2>
           <LineChart />
         </div>
-        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-          <h2 style={{ marginBottom: '20px', color: '#555' }}>Vehicle Mileage</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Vehicle Mileage</h2>
           <BarChart />
         </div>
-        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-          <h2 style={{ marginBottom: '20px', color: '#555' }}>Delivery Status</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md col-span-1 lg:col-span-2">
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">Delivery Status</h2>
           <PieChart />
         </div>
       </div>

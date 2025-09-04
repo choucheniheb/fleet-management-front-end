@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "message": "Vehicle 1 has exceeded the speed limit.",
+    "read": false
+  },
+  {
+    "id": 2,
+    "message": "Vehicle 2 is due for maintenance.",
+    "read": true
+  }
+]

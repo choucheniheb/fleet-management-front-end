@@ -1,18 +1,52 @@
 
-import { Bell, UserCircle, Search } from 'lucide-react';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Bell, Search, User } from 'lucide-react';
 
 const Header = () => {
+  const [user, setUser] = useState(null);
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await fetch('/api/user');
+      const data = await res.json();
+      setUser(data);
+    };
+    const fetchNotifications = async () => {
+      const res = await fetch('/api/notifications');
+      const data = await res.json();
+      setNotifications(data);
+    };
+    fetchUser();
+    fetchNotifications();
+  }, []);
+
   return (
-    <div className="flex justify-between items-center p-5 bg-white border-b border-gray-200">
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        <input type="text" placeholder="Search..." className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg w-96" />
+    <header className="flex items-center justify-between p-4 bg-white border-b">
+      <div className="flex items-center">
+        <Search className="w-6 h-6 text-gray-500" />
+        <input type="text" placeholder="Search..." className="ml-2 p-2 border border-gray-300 rounded-lg" />
       </div>
       <div className="flex items-center">
-        <Bell className="mr-5 cursor-pointer text-gray-600" />
-        <UserCircle className="cursor-pointer text-gray-600" />
+        <div className="relative">
+          <Bell className="w-6 h-6 text-gray-500" />
+          {notifications.length > 0 && (
+            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+              {notifications.length}
+            </span>
+          )}
+        </div>
+        <div className="ml-4 flex items-center">
+          <User className="w-8 h-8 rounded-full" />
+          <div className="ml-2">
+            <p className="font-semibold">{user?.name}</p>
+            <p className="text-sm text-gray-500">{user?.email}</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 

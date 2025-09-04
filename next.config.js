@@ -3,4 +3,9 @@ const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'jsx', 'js']
 };
 
-module.exports = nextConfig;
+module.exports = {
+  ...nextConfig,
+  images: {
+    domains: ['i.pravatar.cc'],
+  },
+};

@@ -9,19 +9,19 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li className="mb-4">
-            <Link href="/overview" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+            <Link href="/dashboard/overview" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
               <LayoutDashboard className="mr-3" />
               Overview
             </Link>
           </li>
           <li className="mb-4">
-            <Link href="/vehicles" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+            <Link href="/dashboard/vehicles" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
               <Car className="mr-3" />
               Vehicles
             </Link>
           </li>
           <li className="mb-4">
-            <Link href="/settings" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
+            <Link href="/dashboard/settings" className="flex items-center text-gray-600 hover:text-blue-500 text-lg font-medium">
               <Settings className="mr-3" />
               Settings
             </Link>

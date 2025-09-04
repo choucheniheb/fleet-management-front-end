@@ -10,15 +10,15 @@ const vehicles: Vehicle[] = [
 
 const Vehicles = () => {
   return (
-    <div>
-      <h1 style={{ marginBottom: '30px', color: '#333' }}>Vehicles</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">Vehicles</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {vehicles.map((vehicle) => (
           <Link key={vehicle.id} href={`/vehicles/${vehicle.id}`}>
-            <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', cursor: 'pointer' }}>
-              <h2 style={{ marginBottom: '10px', color: '#555' }}>{vehicle.make} {vehicle.model}</h2>
-              <p style={{ color: '#777' }}>Year: {vehicle.year}</p>
-              <p style={{ color: '#777' }}>VIN: {vehicle.vin}</p>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-2xl font-semibold text-gray-700 mb-2">{vehicle.make} {vehicle.model}</h2>
+              <p className="text-gray-600">Year: {vehicle.year}</p>
+              <p className="text-gray-600">VIN: {vehicle.vin}</p>
             </div>
           </Link>
         ))}
